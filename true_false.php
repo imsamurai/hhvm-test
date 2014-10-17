@@ -1,6 +1,5 @@
 <?php
 $x = (!(strtolower('no') === 'no'));
 if ($x) {
-  echo '$x should be false!';
-  exit(1);
+  exit('$x should be false!');
 }
