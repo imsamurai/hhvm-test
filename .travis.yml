@@ -19,9 +19,9 @@ matrix:
         - HHVM_VERSION=3.1.0
         
 before_script:
-  - if ["$HHVM_VERSION" != ""] then
-      wget http://dl.hhvm.com/debian/pool/main/h/hhvm/hhvm_$HHVM_VERSION~wheezy_amd64.deb;
-      dpkg -i hhvm_$HHVM_VERSION~wheezy_amd64.deb;
+  - if ["$HHVM_VERSION" != ""]; then
+      wget http://dl.hhvm.com/debian/pool/main/h/hhvm/hhvm_$(HHVM_VERSION)~wheezy_amd64.deb;
+      dpkg -i hhvm_$(HHVM_VERSION)~wheezy_amd64.deb;
     fi;
 
 script:
