@@ -1,0 +1,27 @@
+language: php
+
+php:
+  - 5.3
+  - 5.4
+  - 5.5
+  - hhvm
+
+matrix:
+  include:
+    - php: hhvm
+      env:
+        - HHVM_VERSION=3.3.0
+    - php: hhvm
+      env:
+        - HHVM_VERSION=3.2.0
+    - php: hhvm
+      env:
+        - HHVM_VERSION=3.1.0
+        
+before_script:
+  - wget http://dl.hhvm.com/debian/pool/main/h/hhvm/hhvm_${HHVM_VERSION}~wheezy_amd64.deb
+  - dpkg -i hhvm_${HHVM_VERSION}~wheezy_amd64.deb
+
+script:
+  - php --version
+  - php true_false.php
